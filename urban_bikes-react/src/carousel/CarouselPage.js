@@ -1,13 +1,15 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
 "mdbreact";
-import Bike1 from '../img/CityBike1.jpg';
-import Bike2 from '../img/CityBike2.jpg';
-import Bike3 from '../img/CityBike3.jpg';
+import Bike7 from '../img/CityBike7.jpg';
+import Bike8 from '../img/CityBike8.jpg';
+import Bike6 from '../img/CityBike6.jpg';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 const CarouselPage = () => {
   return (
-    <MDBContainer>
+    <MDBContainer style={{ width:"80%" }}>
       <MDBCarousel
         activeItem={1}
         length={3}
@@ -20,7 +22,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={Bike1}
+                src={Bike7}
                 alt="First slide"
               />
             </MDBView>
@@ -29,7 +31,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={Bike2}
+                src={Bike8}
                 alt="Second slide"
               />
             </MDBView>
@@ -38,7 +40,7 @@ const CarouselPage = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={Bike3}
+                src={Bike6}
                 alt="Third slide"
               />
             </MDBView>
