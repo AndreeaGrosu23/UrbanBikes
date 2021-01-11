@@ -25,6 +25,7 @@
     height: 32px;
     float: left;
     margin-top: 10px;
+    vertical-align: middle;
 }
 
 .social-btn.google {

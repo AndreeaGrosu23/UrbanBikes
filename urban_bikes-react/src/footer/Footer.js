@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import 'mdbreact/dist/css/mdb.css';
+// import 'mdbreact/dist/css/mdb.css';
 
 const FooterPage = () => {
   return (
@@ -8,7 +8,8 @@ const FooterPage = () => {
     style={{ position: "fixed", 
     bottom: "0", 
     left: "0", 
-    width: "100%" }}
+    width: "100%",
+    zIndex: "1" }}
     >
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
