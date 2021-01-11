@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Card, CardColumns } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Footer from '../footer/Footer';
-
+import GoogleMap from '../map/GoogleMap';
 
 function Home() {
 
@@ -29,6 +29,8 @@ function Home() {
         <div className="home-container" style={{ paddingTop: "10px"}}>
             <div className="container">
                 <CarouselPage></CarouselPage>
+
+                <GoogleMap></GoogleMap>
 
                 <CardColumns style={{ padding: 20 }}>
 

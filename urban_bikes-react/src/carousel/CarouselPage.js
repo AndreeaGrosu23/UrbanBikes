@@ -9,7 +9,7 @@ import 'mdbreact/dist/css/mdb.css';
 
 const CarouselPage = () => {
   return (
-    <MDBContainer style={{ width:"80%" }}>
+    <MDBContainer style={{ width:"100%" }}>
       <MDBCarousel
         activeItem={1}
         length={3}
