@@ -50,9 +50,9 @@ class SocialLogin extends Component {
         return (
             <div className="social-login">
                 <a className="btn btn-block social-btn google" href={GOOGLE_AUTH_URL}>
-                    <img src={googleLogo} alt="Google" />Log in with Google</a>
+                    <img src={googleLogo} alt="Google" id="logo" />Log in with Google</a>
                 <a className="btn btn-block social-btn facebook" href={FACEBOOK_AUTH_URL}>
-                    <img src={fbLogo} alt="Facebook" />Log in with Facebook</a>
+                    <img src={fbLogo} alt="Facebook" id="logo" />Log in with Facebook</a>
             </div>
         );
     }

@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import CarouselPage from '../carousel/CarouselPage';
-import axios from 'axios';
-import { Card, CardColumns } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import Footer from '../footer/Footer';
+// import axios from 'axios';
+// import { Card, CardColumns } from "react-bootstrap";
+// import { Link } from 'react-router-dom';
 import GoogleMap from '../map/GoogleMap';
+
 
 function Home() {
 
-    const [networks, setNetworks] = useState([]);
+    // const [networks, setNetworks] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          const result = await axios(
-            'http://api.citybik.es/v2/networks',
-          );
-          console.log(result);
-          setNetworks(result.data.networks);
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //       const result = await axios(
+    //         'http://api.citybik.es/v2/networks',
+    //       );
+    //       console.log(result);
+    //       setNetworks(result.data.networks);
+    //     };
      
-        fetchData();
-      }, []);
+    //     fetchData();
+    //   }, []);
 
-    console.log(networks);
+    // console.log(networks);
 
     return (
         <div className="home-container" style={{ paddingTop: "10px"}}>
@@ -32,7 +32,7 @@ function Home() {
 
                 <GoogleMap></GoogleMap>
 
-                <CardColumns style={{ padding: 20 }}>
+                {/* <CardColumns style={{ padding: 20 }}>
 
                 { networks.map((network) => {
                     
@@ -54,9 +54,10 @@ function Home() {
                     )  
                         
                 })}
-                </CardColumns>
+                </CardColumns> */}
             </div>
-            <Footer></Footer>
+            <div id="attribute">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            
         </div>
     )   
 }

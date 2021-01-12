@@ -39,9 +39,9 @@ class SocialSignup extends Component {
         return (
             <div className="social-signup">
                 <a className="btn btn-block social-btn google" href={GOOGLE_AUTH_URL}>
-                    <img src={googleLogo} alt="Google" /> Sign up with Google</a>
+                    <img src={googleLogo} alt="Google" id="logo" /> Sign up with Google</a>
                 <a className="btn btn-block social-btn facebook" href={FACEBOOK_AUTH_URL}>
-                    <img src={fbLogo} alt="Facebook" /> Sign up with Facebook</a>
+                    <img src={fbLogo} alt="Facebook" id="logo" /> Sign up with Facebook</a>
             </div>
         );
     }
