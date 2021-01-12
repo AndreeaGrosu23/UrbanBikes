@@ -1,15 +1,16 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-// import 'mdbreact/dist/css/mdb.css';
+import {SocialIcon} from 'react-social-icons';
+import "./Footer.css";
 
 const FooterPage = () => {
   return (
     <MDBFooter color="blue" className="font-small pt-4 mt-4" 
-    style={{ position: "fixed", 
-    bottom: "0", 
-    left: "0", 
-    width: "100%",
-    zIndex: "1" }}
+    // style={{ position: "fixed", 
+    // bottom: "0", 
+    // left: "0", 
+    // width: "100%",
+    // zIndex: "1" }}
     >
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
@@ -23,18 +24,12 @@ const FooterPage = () => {
             </p>
           </MDBCol>
           <MDBCol md="6" style={{ textAlign :'right', right: '40px'}}>
-            <h5 className="title">Contact Us</h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!">Facebook</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Instagram</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Email</a>
-              </li>
-            </ul>
+            <h5 className="title">Follow Us</h5>
+            <div>
+                <SocialIcon url="https://www.facebook.com/andreeacristina.grosu" className="social-icon"/> 
+                <SocialIcon url="https://www.instagram.com/chasingsunshineroundtheworld" className="social-icon"/>
+                <SocialIcon url="https://ro.pinterest.com/andreeagrosu87/_saved/" className="social-icon"/>
+            </div>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
