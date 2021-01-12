@@ -16,7 +16,7 @@ import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './App.css';
 import Footer from '../footer/Footer';
-import "bootstrap-css-only/css/bootstrap.min.css";
+// import "bootstrap-css-only/css/bootstrap.min.css";
 
 class App extends Component {
 
