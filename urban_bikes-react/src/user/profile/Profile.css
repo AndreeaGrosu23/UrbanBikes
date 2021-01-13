@@ -8,6 +8,7 @@
 
 .profile-info .profile-avatar img {
     border-radius: 50%;
+    min-width: 210px;
     max-width: 250px;
 }
 
