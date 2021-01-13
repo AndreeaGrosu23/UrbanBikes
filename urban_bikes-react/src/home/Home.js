@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Home.css';
 import CarouselPage from '../carousel/CarouselPage';
 // import axios from 'axios';
 // import { Card, CardColumns } from "react-bootstrap";
 // import { Link } from 'react-router-dom';
-import GoogleMap from '../map/GoogleMap';
+import GoogleMapBikes from '../map/GoogleMapBikes';
 
 
 function Home() {
@@ -28,9 +28,10 @@ function Home() {
     return (
         <div className="home-container" style={{ paddingTop: "10px"}}>
             <div className="container">
-                <CarouselPage></CarouselPage>
+                
+                <GoogleMapBikes></GoogleMapBikes>
 
-                <GoogleMap></GoogleMap>
+                <CarouselPage></CarouselPage>
 
                 {/* <CardColumns style={{ padding: 20 }}>
 
