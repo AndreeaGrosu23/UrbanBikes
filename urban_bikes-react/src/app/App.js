@@ -15,6 +15,8 @@ import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './App.css';
+import Footer from '../footer/Footer';
+// import "bootstrap-css-only/css/bootstrap.min.css";
 
 class App extends Component {
 
@@ -81,7 +83,8 @@ class App extends Component {
             <Route component={NotFound}></Route>
           </Switch>
         </div>
-        <Alert stack={{limit: 3}} timeout= {3000} position= 'top-right' effect='slide' offset={65} />        
+        <Alert stack={{limit: 3}} timeout= {3000} position= 'top-right' effect='slide' offset={65} /> 
+        <Footer></Footer>     
       </div>
     );
   }

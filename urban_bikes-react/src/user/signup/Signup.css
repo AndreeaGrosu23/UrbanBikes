@@ -24,22 +24,17 @@
 .social-btn img {
     height: 32px;
     float: left;
-    margin-top: 10px;
 }
 
-.social-btn.google {
+/* .social-btn.google {
     margin-top: 7px;
-}
+} */
 
 .social-btn.facebook img {
     height: 24px;
     margin-left: 3px;
 }
 
-.social-btn.github img {
-    height: 24px;
-    margin-left: 3px;
-}
 
 .login-link {
     color: rgba(0, 0, 0, 0.65);
@@ -52,4 +47,8 @@
     margin-top: 0;
     margin-bottom: 30px;
     color: rgba(0, 0, 0, 0.65);
+}
+
+#logo {
+    margin-top: 0;
 }
