@@ -62,7 +62,7 @@ function GoogleMapBikes() {
     return (
         <div>
             
-            <div style={{ height: '100vh', width: '100%', marginBottom: "20px"}}>
+            <div style={{ height: '80vh', width: '100%', marginBottom: "20px"}}>
 
                 
                 <Search panTo={panTo} />
