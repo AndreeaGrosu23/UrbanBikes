@@ -1,4 +1,10 @@
 .login-container {
+    background-image: url("../../img/Background2.jpg");
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
     text-align: center;
     min-height: 100vh;
 }
@@ -8,7 +14,7 @@
     background: #fff;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     border-radius: 2px;
-    width: 500px;
+    width: 400px;
     display: inline-block;
     margin-top: 30px;
     vertical-align: middle;

@@ -17,6 +17,8 @@ import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './App.css';
 import Footer from '../footer/Footer';
 // import "bootstrap-css-only/css/bootstrap.min.css";
+import BikeStations from '../stations/BikeStations';
+// import StationDetails from '../stations/StationDetails';
 
 class App extends Component {
 
@@ -80,6 +82,8 @@ class App extends Component {
             <Route path="/login" render={(props) => <Login authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/signup" render={(props) => <Signup authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>
+            <Route exact path="/stations/:id" component={BikeStations}></Route>
+            {/* <Route exact path="/stations/details" component={StationDetails}></Route> */}
             <Route component={NotFound}></Route>
           </Switch>
         </div>
