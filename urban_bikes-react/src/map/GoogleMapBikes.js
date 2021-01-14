@@ -15,7 +15,7 @@ import {
     ComboboxOption,
   } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-import "./map.css"
+import "./map.css";
 
 const fetcher = (...args) => fetch(...args).then(response => response.json());
 
@@ -36,7 +36,7 @@ function GoogleMapBikes() {
         properties: {
             cluster: false,
             networkId: network.id,
-            country: network.location.country         
+            city: network.location.city        
         },
         geometry: {
             type: "Point",
@@ -68,8 +68,7 @@ function GoogleMapBikes() {
                 <Search panTo={panTo} />
                 <Locate panTo={panTo} />
                 <GoogleMapReact 
-                bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY,
-                libraries:['places'] }} 
+                bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY}}
                 defaultCenter={{ lat: 44.4268, lng: 26.1025 }} 
                 defaultZoom= {2}
                 yesIWantToUseGoogleMapApiInternals
@@ -120,14 +119,20 @@ function GoogleMapBikes() {
                                 
                                 >  
                                 <button className="network-marker"
-                                onClick={() => {
-                                    mapRef.current.setZoom(12);
-                                    mapRef.current.panTo({lat: latitude, lng: longitude});
-                                }}
+                                // onClick={() => {
+                                //     mapRef.current.setZoom(12);
+                                //     mapRef.current.panTo({lat: latitude, lng: longitude});
+                                // }}
                                 >
-                                    {/* <Link to="./login"> */}
+                                    <Link to={{
+                                        pathname: `/stations/${cluster.properties.networkId}`,
+                                        state: {network_id: cluster.properties.networkId,
+                                        city: cluster.properties.city,
+                                        latitude: latitude,
+                                        longitude: longitude}
+                                        }}>
                                         <img src="./cycling.svg" alt="network"></img>
-                                    {/* </Link> */}
+                                    </Link>
                                 </button>
                             </Marker>
                         );

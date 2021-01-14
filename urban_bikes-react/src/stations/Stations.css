@@ -1,0 +1,8 @@
+.network-marker {
+    background: none;
+    border: none;
+}
+
+.network-marker img {
+    width: 25px;
+}
