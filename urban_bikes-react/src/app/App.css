@@ -5,3 +5,12 @@
 .s-alert-close::before, .s-alert-close::after {
   width: 2px;
 }
+
+.network-marker {
+  background: none;
+  border: none;
+}
+
+.network-marker img {
+  width: 25px;
+}
