@@ -1,6 +1,6 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
-import useSwr from 'swr';
+import axios from 'axios';
 import useSupercluster from 'use-supercluster';
 import { Link } from 'react-router-dom';
 import usePlacesAutocomplete, {
@@ -17,8 +17,6 @@ import {
 import "@reach/combobox/styles.css";
 import "./map.css";
 
-const fetcher = (...args) => fetch(...args).then(response => response.json());
-
 const Marker = ({children}) => children;
 
 function GoogleMapBikes() {
@@ -27,9 +25,19 @@ function GoogleMapBikes() {
     const [zoom, setZoom] = useState(10);
     const [bounds, setBounds] = useState(null);
 
-    const url = "http://api.citybik.es/v2/networks";
-    const {data, error} = useSwr(url, fetcher);
-    const networks = data && !error ? data.networks : [];
+    const [networks, setNetworks] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          const result = await axios(
+            "http://api.citybik.es/v2/networks",
+          );
+          console.log(result.data.networks);
+          setNetworks(result.data.networks);
+        };
+     
+        fetchData();
+      }, []);
 
     const points = networks.map(network => ({
         type: "Feature",
@@ -47,12 +55,16 @@ function GoogleMapBikes() {
         }
     }));
 
+    console.log(networks);
+
     const {clusters, supercluster} = useSupercluster({
         points,
         bounds,
         zoom,
         options: {radius: 75, maxZoom: 20}
     });
+
+    console.log(clusters);
 
     const panTo = useCallback(({lat, lng}) => {
         mapRef.current.panTo({lat, lng});
@@ -68,22 +80,22 @@ function GoogleMapBikes() {
                 <Search panTo={panTo} />
                 <Locate panTo={panTo} />
                 <GoogleMapReact 
-                bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY}}
-                defaultCenter={{ lat: 44.4268, lng: 26.1025 }} 
-                defaultZoom= {2}
-                yesIWantToUseGoogleMapApiInternals
-                onGoogleApiLoaded={({ map }) => {
-                    mapRef.current=map;
-                }}
-                onChange={({ zoom, bounds}) =>{
-                    setZoom(zoom);
-                    setBounds([
-                        bounds.nw.lng,
-                        bounds.se.lat,
-                        bounds.se.lng,
-                        bounds.nw.lat
-                    ]);
-                }}
+                    bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY}}
+                    defaultCenter={{ lat: 44.4268, lng: 26.1025 }} 
+                    defaultZoom= {2}
+                    yesIWantToUseGoogleMapApiInternals
+                    onGoogleApiLoaded={({ map }) => {
+                        mapRef.current=map;
+                    }}
+                    onChange={({ zoom, bounds}) =>{
+                        setZoom(zoom);
+                        setBounds([
+                            bounds.nw.lng,
+                            bounds.se.lat,
+                            bounds.se.lng,
+                            bounds.nw.lat
+                        ]);
+                    }}
                 >
                     {clusters.map(cluster => {
                         const [longitude, latitude] = cluster.geometry.coordinates;
@@ -118,12 +130,7 @@ function GoogleMapBikes() {
                                 lng={longitude}
                                 
                                 >  
-                                <button className="network-marker"
-                                // onClick={() => {
-                                //     mapRef.current.setZoom(12);
-                                //     mapRef.current.panTo({lat: latitude, lng: longitude});
-                                // }}
-                                >
+                                <button className="network-marker">
                                     <Link to={{
                                         pathname: `/stations/${cluster.properties.networkId}`,
                                         state: {network_id: cluster.properties.networkId,
