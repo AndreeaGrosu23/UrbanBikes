@@ -5,11 +5,11 @@ import javax.validation.constraints.NotBlank;
 
 public class LoginRequest {
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Email must be valid")
+    @Email(message = "Email must be valid format")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Password must be valid")
     private String password;
 
     public String getEmail() {
