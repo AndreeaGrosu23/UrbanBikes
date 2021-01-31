@@ -2,17 +2,19 @@ package com.andreeagrosu.urbanBikes.payload;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class SignUpRequest {
 
-    @NotBlank
+    @NotBlank(message = "Name must be valid")
     private String name;
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Email must be valid")
+    @Email(message = "Email must be valid format")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Password must be at least 4 characters")
+    @Size(min = 4, max = 15, message = "Password must be at least 4 characters and max 15 characters")
     private String password;
 
     public String getName() {
