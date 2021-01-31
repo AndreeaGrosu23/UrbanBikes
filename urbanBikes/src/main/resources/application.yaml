@@ -2,9 +2,9 @@ spring:
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/hiker
-    username: andreeagrosu
-    password: Kirsebaerfarget123>>
+    url:
+    username:
+    password:
   # JPA properties
   jpa:
     hibernate:
@@ -19,15 +19,15 @@ spring:
       client:
         registration:
           google:
-            clientId: 821626118895-3jdljeo3cd59v81tb8sl2d81ajurp9md.apps.googleusercontent.com
-            clientSecret: AnvBmsLfYtlZCuN2DlIwOoRt
+            clientId:
+            clientSecret:
             redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
             scope:
               - email
               - profile
           facebook:
-            clientId: 417411072950323
-            clientSecret: 40dccfcd098a5a4885ec0b34f683feeb
+            clientId:
+            clientSecret:
             redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" # Note that facebook now mandates the use of https redirect URIs, so make sure your app supports https in production
             scope:
               - email
@@ -39,7 +39,7 @@ spring:
             userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
 app:
   auth:
-    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenSecret:
     tokenExpirationMsec: 864000000
   oauth2:
     # After successfully authenticating with the OAuth2 Provider,
